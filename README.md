@@ -1,5 +1,7 @@
 # Aop Integration
 
+![PHPUnit](https://github.com/hyperf/aop-integration/workflows/PHPUnit/badge.svg)
+
 ## 安装
 
 ```
