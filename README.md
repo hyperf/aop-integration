@@ -3,7 +3,7 @@
 ## 安装
 
 ```
-composer require limingxinleo/aop-integration
+composer require hyperf/aop-integration
 ```
 
 ## 配置 AOP 到 ThinkPHP 框架
