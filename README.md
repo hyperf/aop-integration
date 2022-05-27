@@ -116,6 +116,8 @@ return [
 > 我们将初始化方法，放到 timezone 下方，以下省略其他代码
 
 ```
+use Hyperf\AopIntegration\ClassLoader;
+
 if ($timezone = config('app.default_timezone')) {
     date_default_timezone_set($timezone);
 }

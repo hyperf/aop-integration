@@ -19,18 +19,20 @@
         }
     },
     "require": {
-        "php": ">=7.3",
-        "hyperf/di": "^2.0",
-        "hyperf/pimple": "^2.0",
-        "hyperf/utils": "^2.0"
+        "php": ">=7.4",
+        "hyperf/di": "^2.2|^3.0",
+        "hyperf/pimple": "^2.1"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.14",
-        "phpstan/phpstan": "^0.12",
-        "hyperf/testing": "^2.0",
+        "friendsofphp/php-cs-fixer": "^3.0",
+        "phpstan/phpstan": "^1.0",
+        "hyperf/testing": "^2.2|^3.0",
         "swoole/ide-helper": "dev-master"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "config": {
+        "optimize-autoloader": true,
         "sort-packages": true
     },
     "scripts": {
