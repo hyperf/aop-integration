@@ -64,31 +64,14 @@ ClassLoader::init();
 
 ## 配置 AOP 到 Webman 框架
 
-### 安装
-
-- 配置 PSR-4
-
-因为 Hyperf AOP 只能 Hook Composer Autoload，故我们只能切入可以被 Composer 自动加载的类
-
-> 以下省略其他配置
-
-```
-  "autoload": {
-    "psr-4": {
-      "app\\": "app/"
-    },
-    "files": [
-      "./support/helpers.php"
-    ]
-  },
-```
-
 ### 增加 AOP 相关配置
 
 我们需要在 `config` 目录下，增加 `config.php` 配置
 
 ```php
 <?php
+
+use Hyperf\Di\Annotation\AspectCollector;
 
 return [
     'annotations' => [
@@ -100,6 +83,9 @@ return [
                 'mixin',
             ],
             'class_map' => [
+            ],
+            'collectors' => [
+                AspectCollector::class
             ],
         ],
     ],
@@ -115,7 +101,7 @@ return [
 
 > 我们将初始化方法，放到 timezone 下方，以下省略其他代码
 
-```
+```php
 use Hyperf\AopIntegration\ClassLoader;
 
 if ($timezone = config('app.default_timezone')) {
@@ -185,18 +171,9 @@ class Index
 }
 ```
 
-然后配置路由
-
-```php
-<?php
-use Webman\Route;
-
-Route::any('/json', 'app\controller\Index@json');
-```
-
 最后启动服务，并测试。
 
 ```shell
 php start.php start
-curl  http://127.0.0.1:8787/json
+curl  http://127.0.0.1:8787/index/json
 ```
