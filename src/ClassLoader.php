@@ -33,7 +33,7 @@ class ClassLoader extends Loader
         parent::init($proxyFileDirPath, $configDir, $handler);
     }
 
-    protected function loadDotenv(): void
+    protected static function loadDotenv(): void
     {
     }
 }
