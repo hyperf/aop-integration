@@ -19,14 +19,14 @@
         }
     },
     "require": {
-        "php": ">=7.4",
-        "hyperf/di": "^2.2|^3.0",
+        "php": ">=8.0",
+        "hyperf/di": "^3.0",
         "hyperf/pimple": "^2.1"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
         "phpstan/phpstan": "^1.0",
-        "hyperf/testing": "^2.2|^3.0",
+        "hyperf/testing": "^3.0",
         "swoole/ide-helper": "dev-master"
     },
     "minimum-stability": "dev",
